@@ -1,0 +1,32 @@
+== Local server http://127.0.0.1:8099
+PASS  local connect (open event) 
+PASS  local received 4 (got 4)
+PASS  local priorities 1/3/4/5 
+PASS  local click URL 
+PASS  local tags -> emoji + labels 
+PASS  local view action only (http action skipped) 
+PASS  local toast XML well-formed 
+PASS  local all live (not backfill) 
+PASS  local multi-topic stream 
+PASS  resume since=: exactly the 2 missed messages (got: away1,away2)
+PASS  resume since=: flagged as backfill 
+PASS  live after resume, not backfill 
+PASS  detects server down (reconnecting)
+PASS  reconnects after restart 
+PASS  after restart: got the new message exactly once, no duplicates (got: after-restart)
+PASS  idle timeout triggers reconnect (frozen server) 
+PASS  reconnected after idle 
+PASS  after idle: message received once (got: after-idle)
+PASS  cursor persisted (LastTime=1792621503, ids=10)
+RESULT passed=19 failed=0
+== ntfy.sh throwaway topic ntfytray-test-109c93fc06434caa
+PASS  ntfy.sh connect (open event) 
+PASS  ntfy.sh received 4 (got 4)
+PASS  ntfy.sh priorities 1/3/4/5 
+PASS  ntfy.sh click URL 
+PASS  ntfy.sh tags -> emoji + labels 
+PASS  ntfy.sh view action only (http action skipped) 
+PASS  ntfy.sh toast XML well-formed 
+PASS  ntfy.sh all live (not backfill) 
+PASS  ntfy.sh poll since=all returns the 4 (HTTP 200, 4)
+RESULT passed=9 failed=0

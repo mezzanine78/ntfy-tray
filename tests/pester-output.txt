@@ -1,0 +1,75 @@
+Pester v6.2.0
+
+Running tests from 1 files.
+
+Running tests from '/workspace/agents/dooer/outputs/ntfy-tray/tests/NtfyTray.Core.Tests.ps1'
+Describing ConvertFrom-NtfyLine
+  [+] parses a full message line 149ms
+  [+] defaults priority to 3 and tags to empty 11ms
+  [+] clamps out-of-range priority 9ms
+  [+] parses open and keepalive events 11ms
+  [+] returns $null for blank, invalid JSON, arrays and objects without event 27ms
+  [+] keeps unicode in message text 9ms
+
+Describing URL building
+  [+] builds a multi-topic stream URL 131ms
+  [+] adds since and poll 9ms
+  [+] rejects bad topics, bad since and non-http servers 32ms
+  [+] keeps a sub-path server 4ms
+  [+] builds the auth check URL 3ms
+  [+] makes filesystem-safe server keys 13ms
+  [+] validates topic names 9ms
+
+Describing Cursor (since= resume and dedupe)
+  [+] starts empty with no since value 8ms
+  [+] tracks the newest time and drops duplicates 18ms
+  [+] simulates a reconnect replay: inclusive since returns the last message again, only new ones pass 8ms
+  [+] caps the seen-id list at 500 30ms
+  [+] round-trips through a file 35ms
+  [+] flags backfill only when resumed and older than the connect time 6ms
+
+Describing Priority and tag mapping
+  [+] maps priorities to toast behaviour 18ms
+  [+] renders known tags as emoji and unknown as labels 35ms
+  [+] loads the full gemoji map (1800+ aliases) 14ms
+  [+] falls back to the built-in map when the json is missing 19ms
+
+Describing Toast content and XML
+  [+] builds well-formed XML with escaping 122ms
+  [+] adds only safe view actions plus Dismiss for high priority 15ms
+  [+] drops unsafe click URLs and silences low priority 12ms
+  [+] uses the topic display name and priority badge in the attribution 3ms
+  [+] flattens markdown bodies 15ms
+  [+] builds a summary toast 12ms
+  [+] Test-NtfySafeUrl allows only http(s) 4ms
+
+Describing Notification gate
+  [+] passes normal messages 17ms
+  [+] applies per-topic min priority and pause 5ms
+  [+] applies global min priority and pause 5ms
+  [+] honours active hours, but priority 5 breaks through 21ms
+  [+] handles active-hours ranges across midnight 5ms
+
+Describing Backoff
+  [+] follows 1,2,4,8,16,30,60 and caps at 60 17ms
+  [+] waits longer after auth and rate-limit errors 7ms
+  [+] adds at most 20% jitter 11ms
+
+Describing Config load/save
+  [+] returns defaults for a missing file 7ms
+  [+] expands the short form and round-trips 31ms
+  [+] supports several servers and per-topic server 12ms
+  [+] drops invalid topics, duplicates and disabled topics from the stream 6ms
+  [+] never writes secret-looking keys 7ms
+  [+] clamps numbers and validates times 6ms
+
+Describing Token store
+  [+] protects and unprotects a token (DPAPI on Windows) 20ms
+  [+] saves, reads, builds the auth header and removes 18ms
+  [+] never sends a token over plain http (except loopback) 8ms
+
+Describing Recent line formatting
+  [+] formats and truncates 14ms
+Tests completed in 1.6s
+Tests Passed: 48, Failed: 0, Skipped: 0, Inconclusive: 0, NotRun: 0
+PASSED=48 FAILED=0 SKIPPED=0 (Pester 6.2.0, PowerShell 7.4.6)

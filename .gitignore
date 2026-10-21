@@ -1,0 +1,22 @@
+# Runtime data - never commit (lives in %APPDATA%\NtfyTray on a real install)
+config.json
+state/
+tokens/
+*.token
+*.cursor.json
+*.log
+*.log.old
+reload.flag
+# Secrets
+.env
+.env.*
+auth.*
+*.pem
+*.key
+*.pfx
+id_rsa*
+id_ed25519*
+credentials*
+# Build output
+dist/
+tests/*.xml

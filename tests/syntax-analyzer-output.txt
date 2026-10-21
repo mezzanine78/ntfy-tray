@@ -1,0 +1,16 @@
+src/NtfyTray.Core.psm1                   parse errors: 0
+src/NtfyTray.ps1                         parse errors: 0
+src/uninstall.ps1                        parse errors: 0
+tests/Invoke-LiveTests.ps1               parse errors: 0
+tests/NtfyTray.Core.Tests.ps1            parse errors: 0
+tools/Build-EmojiMap.ps1                 parse errors: 0
+tools/Build-Release.ps1                  parse errors: 0
+tools/Test-Secrets.ps1                   parse errors: 0
+tools/Test-Syntax.ps1                    parse errors: 0
+install.ps1                              parse errors: 0
+PSScriptAnalyzer warnings/errors: 3 (excluded: PSAvoidUsingWriteHost, PSUseShouldProcessForStateChangingFunctions, PSUseApprovedVerbs, PSReviewUnusedParameter, PSUseSingularNouns, PSAvoidUsingEmptyCatchBlock)
+    Error PSAvoidUsingConvertToSecureStringWithPlainText NtfyTray.Core.Tests.ps1:308 File 'NtfyTray.Core.Tests.ps1' uses ConvertTo-SecureString with plaintext. This will expose secure information. Encrypted standard strings should be used instead.
+    Error PSAvoidUsingConvertToSecureStringWithPlainText NtfyTray.Core.Tests.ps1:315 File 'NtfyTray.Core.Tests.ps1' uses ConvertTo-SecureString with plaintext. This will expose secure information. Encrypted standard strings should be used instead.
+    Error PSAvoidUsingConvertToSecureStringWithPlainText NtfyTray.Core.Tests.ps1:324 File 'NtfyTray.Core.Tests.ps1' uses ConvertTo-SecureString with plaintext. This will expose secure information. Encrypted standard strings should be used instead.
+PSUseCompatibleSyntax target 5.1 : 0 finding(s)
+PSUseCompatibleSyntax target 7.0 : 0 finding(s)
